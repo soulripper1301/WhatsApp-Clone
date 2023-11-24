@@ -28,41 +28,16 @@ class phoneno extends StatelessWidget {
               ),
               ),
           Padding(padding: const EdgeInsets.only(left: 35),
-            child:OutlinedButton(
-              style: const ButtonStyle(
-                side: MaterialStatePropertyAll(BorderSide.none),
+            child:PopupMenuButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-              onPressed: () {
-                showMenu(
-                  context: context,
-                  position: const RelativeRect.fromLTRB(10, 90, 0, 0), // Adjust the position as per your requirement
-                  items: [
-                    const PopupMenuItem(
-                      value: 1,
-                      child: Text('Link as Companion Device',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    const PopupMenuItem(
-                      value: 1,
-                      child: Text('Help',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-
-                    // Add more PopupMenuItems as needed
-                  ],
-                );
+              itemBuilder: (context) {
+                return [
+                  const PopupMenuItem(child: Text('Link a Companion Device'),),
+                  const PopupMenuItem(child: Text('Help')),
+                ];
               },
-              child:
-              const Image(image: AssetImage('lib/Images/popup dots.png'),
-                height: 20,
-                width: 20,
-              ),
             ),
           ),
     ],

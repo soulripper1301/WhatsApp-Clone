@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/Screens/Home.dart';
 import 'package:whatsapp_clone/screens/fingerprint.dart';
 class otp extends StatelessWidget {
   otp ({super.key});
@@ -19,41 +18,23 @@ class otp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
                 const SizedBox(width: 90,),
-                const Text('Enter your phone number',
+                const Text('Verifying your number',
                   style: TextStyle(
                     color: Color(0xFF128C7E),
                     fontWeight: FontWeight.w500,
                     fontSize: 18,
                   ),
                 ),
-                Padding(padding: const EdgeInsets.only(left: 35),
-                  child:OutlinedButton(
-                    style: const ButtonStyle(
-                      side: MaterialStatePropertyAll(BorderSide.none),
+                Padding(padding: const EdgeInsets.only(left: 50),
+                  child:PopupMenuButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    onPressed: () {
-                      showMenu(
-                        context: context,
-                        position: const RelativeRect.fromLTRB(10, 90, 0, 0), // Adjust the position as per your requirement
-                        items: [
-                          const PopupMenuItem(
-                            value: 1,
-                            child: Text('Help',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-
-                          // Add more PopupMenuItems as needed
-                        ],
-                      );
+                    itemBuilder: (context) {
+                      return [
+                        const PopupMenuItem(child: Text('Help')),
+                      ];
                     },
-                    child:
-                    const Image(image: AssetImage('lib/Images/popup dots.png'),
-                      height: 20,
-                      width: 20,
-                    ),
                   ),
                 ),
               ],

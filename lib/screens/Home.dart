@@ -55,7 +55,7 @@ class MyHomePage extends StatelessWidget {
                   PopupMenuItem(child: Text('Settings'),
                     onTap: (){
                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const settings()),);
+                        MaterialPageRoute(builder: (context) => const Settings()),);
                     },
                   ),
                 ];

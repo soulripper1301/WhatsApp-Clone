@@ -72,7 +72,6 @@ class ChatsTab extends StatelessWidget {
                 ),
                 ),
               );
-
             },
               child: const SingleChatWidget(
                   chatTitle: "Tony Stark",
@@ -83,13 +82,14 @@ class ChatsTab extends StatelessWidget {
             ),
             InkWell(onTap: () {
               Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>
-              const chat(
-                image: 'https://wallpapercave.com/wp/GRDCsEG.jpg',
-                text: 'Bruce Banner',
-              ),
-              ),
-            );},
+                MaterialPageRoute(builder: (context) =>
+                const chat(
+                  image: 'https://wallpapercave.com/wp/GRDCsEG.jpg',
+                  text: 'Bruce Banner',
+                ),
+                ),
+              );
+            },
               child: const SingleChatWidget(
                   chatTitle: "Bruce Banner",
                   chatMessage: 'Hulk Smash',
@@ -207,7 +207,6 @@ class ChatsTab extends StatelessWidget {
                 ),
                 ),
               );
-
             },
               child: const SingleChatWidget(
                   chatTitle: "Tony Stark",
@@ -224,7 +223,8 @@ class ChatsTab extends StatelessWidget {
                   text: 'Bruce Banner',
                 ),
                 ),
-              );},
+              );
+            },
               child: const SingleChatWidget(
                   chatTitle: "Bruce Banner",
                   chatMessage: 'Hulk Smash',
@@ -287,12 +287,20 @@ class ChatsTab extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FAB(
+      floatingActionButton: SizedBox(
+        width: 60,
+        height: 60,
+        child: FloatingActionButton(
           onPressed: () {
             Navigator.push(context,
               MaterialPageRoute(builder: (context) => const addcontact()),);
           },
-          Icon: const Icon(Icons.chat, color: Colors.white,)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)),
+          backgroundColor: const Color(0xFF128C7E),
+          child: Image(image: AssetImage('lib/Images/message icon WHITE.png')),
+        ),
+      ),
     );
   }
 }

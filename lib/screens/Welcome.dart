@@ -11,33 +11,15 @@ class welcome extends StatelessWidget {
         children: [
           const SizedBox(height: 45,),
          Padding(padding: const EdgeInsets.only(left: 340),
-          child:OutlinedButton(
-            style: const ButtonStyle(
-              side: MaterialStatePropertyAll(BorderSide.none),
+          child:PopupMenuButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-              onPressed: () {
-                showMenu(
-                  context: context,
-                  position: const RelativeRect.fromLTRB(10, 90, 0, 0), // Adjust the position as per your requirement
-                  items: [
-                    const PopupMenuItem(
-                      value: 1,
-                      child: Text('Help',
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                      ),
-                    ),
-
-                    // Add more PopupMenuItems as needed
-                  ],
-                );
-              },
-              child:
-          const Image(image: AssetImage('lib/Images/popup dots.png'),
-            height: 20,
-            width: 20,
-          ),
+            itemBuilder: (context) {
+              return [
+                const PopupMenuItem(child: Text('Help')),
+              ];
+            },
           ),
          ),
           const SizedBox(height: 20,),
